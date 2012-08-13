@@ -24,8 +24,14 @@ Background: movies have been added to database
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
   # your steps here
+  Given I check all ratings
+  And I press "Refresh"
+  Then I should see "2001: A Space Odyssey" before "When Harry Met Sally"
 
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
   # your steps here
+  Given I check all ratings
+  And I press "Refresh"
+  Then I should see "1968-04-06" before "2011-08-10"
 
